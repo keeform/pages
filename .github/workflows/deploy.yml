@@ -4,16 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version (e.g. v5.0.0-beta2)'
-        required: false
-      url:
-        description: 'Installer download URL'
-        required: false
-      xpi_url:
-        description: 'Firefox XPI URL (beta only)'
-        required: false
   repository_dispatch:
     types: [new-release]
 
@@ -53,38 +43,38 @@ jobs:
           echo "Generated last_modified.yml:"
           cat _data/last_modified.yml
 
-      - name: Write version data files
+      - name: Fetch version info from keeform/keeform
+        env:
+          GH_TOKEN: ${{ secrets.INSTALLER_REPO_TOKEN }}
         run: |
-          if [ -n "${{ github.event.client_payload.version }}" ]; then
-            VERSION="${{ github.event.client_payload.version }}"
-            URL="${{ github.event.client_payload.url }}"
-            XPI_URL="${{ github.event.client_payload.xpi_url }}"
-          elif [ -n "${{ github.event.inputs.version }}" ]; then
-            VERSION="${{ github.event.inputs.version }}"
-            URL="${{ github.event.inputs.url }}"
-            XPI_URL="${{ github.event.inputs.xpi_url }}"
-          else
-            echo "No version provided, using committed data files."
-            exit 0
-          fi
-          VERSION_BARE="${VERSION#v}"
-          if echo "$VERSION_BARE" | grep -q '\-beta'; then
-            cat > _data/beta.yml <<EOF
-          version: "${VERSION_BARE}"
-          url: "${URL}"
-          xpi_url: "${XPI_URL}"
+          # Latest tag (any, including beta) — for beta page
+          LATEST_TAG=$(gh release list --repo keeform/keeform --limit 1 --json tagName --jq '.[0].tagName')
+          LATEST_BARE="${LATEST_TAG#v}"
+          LATEST_URL="https://github.com/keeform/keeform/releases/download/${LATEST_TAG}/KeeForm.Installer.v${LATEST_BARE}.exe"
+
+          # Latest non-beta release — for install page
+          RELEASE_TAG=$(gh release list --repo keeform/keeform --limit 10 --json tagName --jq '[.[] | select(.tagName | test("-beta") | not)] | .[0].tagName')
+          RELEASE_BARE="${RELEASE_TAG#v}"
+          RELEASE_URL="https://github.com/keeform/keeform/releases/download/${RELEASE_TAG}/KeeForm.Installer.v${RELEASE_BARE}.exe"
+
+          echo "Latest tag:   $LATEST_TAG"
+          echo "Release tag:  $RELEASE_TAG"
+
+          mkdir -p _data
+
+          cat > _data/beta.yml <<EOF
+          version: "${LATEST_BARE}"
+          url: "${LATEST_URL}"
+          xpi_url: ""
           chrome_available: false
           EOF
-            echo "Written _data/beta.yml:"
-            cat _data/beta.yml
-          else
-            cat > _data/version.yml <<EOF
-          version: "${VERSION_BARE}"
-          url: "${URL}"
+
+          cat > _data/version.yml <<EOF
+          version: "${RELEASE_BARE}"
+          url: "${RELEASE_URL}"
           EOF
-            echo "Written _data/version.yml:"
-            cat _data/version.yml
-          fi
+
+          echo "Written _data/beta.yml and _data/version.yml"
 
       - name: Build with Jekyll
         run: bundle exec jekyll build
