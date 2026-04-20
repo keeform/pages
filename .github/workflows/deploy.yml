@@ -52,6 +52,7 @@ jobs:
           LATEST_TAG=$(gh release list --repo keeform/keeform --limit 1 --json tagName --jq '.[0].tagName')
           LATEST_BARE="${LATEST_TAG#v}"
           LATEST_URL="https://github.com/keeform/keeform/releases/download/${LATEST_TAG}/KeeForm.Installer.v${LATEST_BARE}.exe"
+          XPI_URL="https://github.com/keeform/keeform/releases/download/${LATEST_TAG}/keeform-beta.xpi"
 
           # Latest non-beta release — for install page
           RELEASE_TAG=$(gh release list --repo keeform/keeform --limit 10 --json tagName --jq '[.[] | select(.tagName | test("-beta") | not)] | .[0].tagName')
@@ -66,7 +67,7 @@ jobs:
           cat > _data/beta.yml <<EOF
           version: "${LATEST_BARE}"
           url: "${LATEST_URL}"
-          xpi_url: ""
+          xpi_url: "${XPI_URL}"
           chrome_available: false
           EOF
 
