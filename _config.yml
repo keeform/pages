@@ -1,6 +1,6 @@
 title: KeeForm
 description: A simple form filler for KeePass
-baseurl: ""
+baseurl: "/pages"
 url: "https://keeform.github.io"
 
 # No plugins needed — pure Jekyll
