@@ -1,0 +1,133 @@
+---
+layout: base
+title: Beta
+description: Install KeeForm v5 beta for Firefox — two steps, under 45 seconds.
+permalink: /keepass2/keeform-beta
+---
+
+                <style class="uk-margin-remove-adjacent">
+                  #page\#0 svg {
+                    fill: white;
+                    margin-left: 10px;
+                  }
+
+                  #page\#0 span {
+                    vertical-align: center;
+                    space: nowrap;
+                  }
+                </style>
+                <div class="uk-section-default" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;">
+                  <div class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section" data-src="/assets/images/keeform/hero-install.svg" uk-img>
+                    <div class="uk-container">
+                      <div class="uk-grid-margin-large uk-grid tm-grid-expand uk-grid-column-small uk-grid-row-large uk-child-width-1-1">
+                        <div class="uk-grid-item-match uk-flex-middle uk-width-1-1">
+                          <div class="uk-panel uk-width-1-1">
+                            <h2 class="uk-h1 uk-width-xlarge uk-margin-auto uk-text-right@s uk-text-center" id="page#0" uk-scrollspy-class="uk-animation-slide-top"> Beta Installation <span class="white-space: nowrap;" <img uk-icon="icon:fa-firefox;ratio:2">
+                              </span>
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-section-warning uk-section uk-section-small">
+                  <div class="uk-container">
+                    <div class="uk-grid-margin uk-grid tm-grid-expand uk-child-width-1-1">
+                      <div class="uk-width-1-1">
+                        <div class="uk-panel uk-margin uk-text-center">
+                          <span uk-icon="icon: warning; ratio: 1.5"></span>
+                          <strong> This is a beta release.</strong> It is intended for experienced users who are comfortable installing extensions manually. Please report any issues via <a href="https://t.me/keeform" target="_blank">Telegram</a> or <a href="mailto:dave_keepass@users.sourceforge.net">email</a>.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-section-default uk-section uk-section-small-top uk-section-xsmall-bottom">
+                  <div class="uk-container">
+                    <div class="uk-grid-margin uk-grid tm-grid-expand uk-child-width-1-1">
+                      <div class="uk-width-1-1">
+                        <h2 class="uk-heading-bullet uk-text-center"> Step 1: Add-on for KeePass </h2>
+                        <div class="uk-panel uk-margin uk-text-center">Download and run the KeeForm installer. The defaults are fine for most users. You only need to do this once, even if you install KeeForm on multiple browsers.</div>
+                        <div class="uk-margin uk-text-center">
+                          <a class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle" href="{{ site.data.beta.url }}"> Add-on for KeePass <span class="uk-margin-xsmall-left" uk-icon="cloud-download"></span>
+                          </a>
+                        </div>
+                        <div class="uk-panel uk-margin uk-text-center uk-text-muted">Version {{ site.data.beta.version }}</div>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-section-default uk-section uk-section-xsmall">
+                  <div class="uk-container">
+                    <div class="uk-grid-margin uk-grid tm-grid-expand uk-child-width-1-1">
+                      <div class="uk-width-1-1">
+                        <h2 class="uk-heading-bullet uk-text-center"> Step 2: Add-on for your browsers </h2>
+                        <div class="uk-panel uk-margin uk-text-center">Install the extension for each browser you want to use with KeeForm.</div>
+                        <div class="uk-margin uk-text-center">
+                          <div class="uk-flex-middle uk-child-width-auto uk-flex-center" uk-grid>
+                            <div class="el-item">
+                              <a class="el-content uk-button uk-button-secondary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle" href="{{ site.data.beta.xpi_url }}" download>
+                                <span class="uk-margin-xsmall-right uk-icon" uk-icon="icon: fa-firefox"></span>Mozilla Firefox <span class="uk-margin-xsmall-left" uk-icon="cloud-download"></span>
+                              </a>
+                            </div>
+                            {% if site.data.beta.chrome_available %}
+                            <div class="el-item">
+                              <a class="el-content uk-button uk-button-secondary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle" href="https://chrome.google.com/webstore/detail/keeform/bmhcphbkicakelgpchlhccaeljahoima" target="_blank">
+                                <span class="uk-margin-xsmall-right uk-icon" uk-icon="icon: fa-chrome"></span>Google Chrome <span class="uk-margin-xsmall-left" uk-icon="sign-out"></span>
+                              </a>
+                            </div>
+                            <div class="el-item">
+                              <a class="el-content uk-button uk-button-secondary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle" href="https://chrome.google.com/webstore/detail/keeform/bmhcphbkicakelgpchlhccaeljahoima" target="_blank">
+                                <span class="uk-margin-xsmall-right uk-icon" uk-icon="icon: fa-edge"></span>Microsoft Edge <span class="uk-margin-xsmall-left" uk-icon="sign-out"></span>
+                              </a>
+                            </div>
+                            {% else %}
+                            <div class="el-item uk-text-muted uk-text-center">
+                              <span uk-icon="icon: fa-chrome"></span> Chrome / <span uk-icon="icon: fa-edge"></span> Edge — Advanced users can <a href="https://github.com/keeform/keeform" target="_blank">sideload the extension from the GitHub repo</a>.
+                            </div>
+                            {% endif %}
+                          </div>
+                        </div>
+                        <div class="uk-panel uk-margin uk-text-center">
+                          <strong>How to install the Firefox extension:</strong>
+                          <ol class="uk-list uk-list-decimal uk-text-left uk-margin-auto" style="max-width: 480px;">
+                            <li>Download the <code>.xpi</code> file above.</li>
+                            <li>In Firefox, open <code>about:addons</code>.</li>
+                            <li>Click the gear icon <span uk-icon="cog"></span> → <strong>Install Add-on From File</strong>.</li>
+                            <li>Select the downloaded <code>.xpi</code> file.</li>
+                            <li>Firefox will upgrade the extension in place.</li>
+                          </ol>
+                        </div>
+                        <hr>
+                        <div class="uk-panel uk-margin uk-text-center">After installing, make sure the extension is enabled — KeeForm shows a <span class="uk-text-success">green indicator</span> when everything is working. From now on, double-clicking an https URL in KeePass opens the browser and fills your login automatically. </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-section-muted uk-section uk-section-small" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;">
+                  <div class="uk-container">
+                    <div class="uk-grid-margin uk-grid tm-grid-expand" uk-grid>
+                      <div class="uk-grid-item-match uk-flex-middle uk-width-expand@s">
+                        <div class="uk-panel uk-width-1-1">
+                          <h3 class="uk-h2 uk-text-left@s uk-text-center" uk-scrollspy-class> Questions? </h3>
+                        </div>
+                      </div>
+                      <div class="uk-grid-item-match uk-flex-middle uk-width-large@s">
+                        <div class="uk-panel uk-width-1-1">
+                          <div class="uk-margin uk-text-right@s uk-text-center" uk-scrollspy-class>
+                            <div class="uk-flex-middle uk-grid-small uk-child-width-auto uk-flex-right@s uk-flex-center" uk-grid>
+                              <div class="el-item">
+                                <a class="el-content uk-button uk-button-primary" href="https://t.me/keeform" target="_blank"> Telegram </a>
+                              </div>
+                              <div class="el-item">
+                                <a class="el-content uk-button uk-button-default" href="mailto:dave_keepass@users.sourceforge.net"> Email </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>

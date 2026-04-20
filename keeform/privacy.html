@@ -1,0 +1,55 @@
+---
+layout: base
+title: Privacy Policy
+permalink: /keeform/privacy
+---
+
+                <div class="uk-section-primary uk-section">
+                  <div class="uk-container uk-container-small">
+                    <div class="uk-grid-margin uk-grid tm-grid-expand uk-child-width-1-1">
+                      <div class="uk-width-1-1@m">
+                        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child uk-margin">
+                          <h3 class="el-title uk-card-title uk-margin-top uk-margin-remove-bottom"> KeeForm Browser Extension Privacy Policy </h3>
+                          <div class="el-meta uk-text-meta uk-margin-top">updated {{ site.data.last_modified.privacy }}</div>
+                          <div class="el-content uk-panel uk-margin-top">
+                            <p>KeeForm handles sensitive data like your usernames, passwords, and URLs. It can also read and change all your data on the websites you visit.</p>
+                            <p>KeeForm uses this information and ability only for one purpose - to fill forms on login pages.</p>
+                            <p>At no time will KeeForm persist, collect, track, transmit, or share your username, password, website URL, or any content of the websites visited - not even in aggregated form.</p>
+                            <p>This is a typical KeeForm workflow:</p>
+                            <ol>
+                              <li>KeeForm "waits for a message" from KeePass which contains a URL, username and password.</li>
+                              <li>This information is sent to the browser extension using the browser's native messaging protocol.</li>
+                              <li>The KeeForm browser extension opens the provided URL,</li>
+                              <li>scans the web site for username and password fields,</li>
+                              <li>tries to fill those fields with the username and password provided,</li>
+                              <li>and optionally submits the form (disabled by default, and it is recommended to leave it disabled, because the "field finding" algorithm can not be 100% accurate. It might miss form fields, or mistake other form fields as user fields, and so on).</li>
+                            </ol>
+                            <p>KeeForm discards your sensitive information after a timeout. This time-out is user configurable and by default 30s. The time-out is used in the event of a slow loading website, or if for any reason the form filling process does not complete.</p>
+                            <p>KeeForm does not have access to your KeePass password database.</p>
+                            <p>
+                              <strong>Important:</strong> KeeForm does not actually transmit any form data. Only the website, which was loaded using your URL, determines how and to where your form data is transmitted. Some websites might not secure the transmission properly.
+                            </p>
+                            <p class="license"> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License... </p>
+                          </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child uk-margin">
+                          <h3 class="el-title uk-card-title uk-margin-top uk-margin-remove-bottom"> KeeForm Website Privacy Policy </h3>
+                          <div class="el-content uk-panel uk-margin-top">
+                            <section>
+                              <h4>Privacy </h3>
+                                <p> This Privacy Statement applies to all information collected by or submitted to keeform.org, including personal information. "Personal information" is data that reasonably can be used to identify or describe an individual. </p>
+                            </section>
+                            <section>
+                              <h4>No Tracking or Analytics </h3>
+                                <p> keeform.org does not use analytics scripts, tracking cookies, or third-party services. This site is hosted by a third-party hosting provider which may log visitor IP addresses. </p>
+                            </section>
+                            <section>
+                              <h4>Web Links </h3>
+                                <p> keeform.org holds no responsibility for the content (including terms and conditions and privacy policy) of any other website linked from this site. Any links provided are for information purposes only, for your convenience and should not be regarded as an endorsement by keeform.org. </p>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>

@@ -1,0 +1,307 @@
+---
+layout: base
+title: FAQ
+description: Frequently asked questions about KeeForm.
+permalink: /keepass2/keeform-faq
+---
+
+                <div class="uk-section-default" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;">
+                  <div class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section" data-src="/assets/images/keeform/hero-install.svg" uk-img>
+                    <div class="uk-container">
+                      <div class="uk-grid-margin-large uk-grid tm-grid-expand uk-grid-column-small uk-grid-row-large uk-child-width-1-1">
+                        <div class="uk-grid-item-match uk-flex-middle uk-width-1-1">
+                          <div class="uk-panel uk-width-1-1">
+                            <h2 class="uk-h1 uk-width-xlarge uk-margin-auto uk-text-right@s uk-text-center" id="page#0" uk-scrollspy-class="uk-animation-slide-top"> Frequently Asked Questions </h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-section-default uk-section">
+                  <div class="uk-container uk-container-small">
+                    <div class="uk-grid-margin uk-grid tm-grid-expand uk-child-width-1-1">
+                      <div class="uk-width-1-1@m">
+                        <div class="uk-panel uk-text-lead uk-width-2xlarge uk-margin-auto uk-text-center">This is where you will find most answers. If there should still be any questions left, don't hesitate to contact us. <span class="uk-text-small uk-text-muted">Updated {{ site.data.last_modified.faq }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-section-default uk-section uk-padding-remove-top uk-section-large-bottom">
+                  <div class="uk-container uk-container-small">
+                    <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-margin-xlarge">
+                      <div class="uk-width-1-1@m">
+                        <h2 class="uk-h3 uk-heading-bullet uk-margin-medium"> Installation </h2>
+                        <div class="uk-accordion-default" uk-accordion="collapsible: true;">
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>KeeForm not working after KeePass 2.54 update? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">This is caused by a change in KeePass. If global URL overrides are not stored in the enforced configuration file, KeePass 2.54 disables them. Running the KeeForm installer again should fix this. See also https://keepass.info/news/n230603_2.54.html</div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>KeeForm does not open Edge anymore? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">Startup Boost is a new feature starting with Edge 89. Startup boost is turned on automatically when Edge is the default web browser. In case KeeForm does not start Edge anymore, please disable Startup Boost in the settings (edge://settings/system).</div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>KeeForm does not work anymore? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>In case there was a bug in older versions ...</p>
+                                <p>Please download and run the latest version of the installer to update.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Why is KeeForm not shown in "menu -> tools -> plugins"? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>Strictly speaking KeeForm is not a plugin. KeeForm it is just an extension which is integrated via the KeePass URL override feature.</p>
+                                <code>MENU -> tools->options-> TAB integration -> BUTTON Url Overrides</code>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Is KeeForm portable? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">KeeForm is not portable. KeeForm needs to communicates with a browser extension. However browsers do not allow to install extensions in a portable manner.</div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>KeeForm could not connect to browser ... <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>Please make sure the that the browser extension is installed and shows a "green light"</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>KeeForm shows a "red light"? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>After enabling the browser extension, the badge color on the KeeForm icon should turn green. If it turns red, then the extension could not start. This can happen, for example, if you forgot to run the KeeForm installer in Windows. Or if the process keeform_host.exe is not able to start, but that should be very rare.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Does KeeForm work on all sites? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>KeeForm will not fill forms which have more than two fields. Only the classic username and password combo is supported.</p>
+                                <p>KeeForm uses just a simple, but effective heuristic method to automate logins, and it works 99% of the time ("not a scientific estimate"). For the remaining 1% you can still use auto-typing in KeePass.</p>
+                                <p>Having said that, should you ever encounter a one-page login where KeeForm does not work, please send us the URL. We will try to improve KeeForm.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>What registry keys are added during the installation? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <strong>Should be only attempted by experienced users. Backup recommended.</strong> KeeForm adds two registry keys, by running something like the commands below (but first you need change the USERNAME to your user obviously)
+                                <pre>
+reg.exe ADD HKCU\Software\Mozilla\NativeMessagingHosts\org.keeform.host /d "C:\Users\USERNAME\AppData\Local\KeeForm\org.keeform.host.firefox.json" /f /t REG_SZ 
+
+reg.exe ADD HKCU\Software\Google\Chrome\NativeMessagingHosts\org.keeform.host /d "C:\Users\USERNAME\AppData\Local\KeeForm\org.keeform.host.chrome.json" /f /t REG_SZ
+</pre> Keeform also adds an override in the Keepass settings
+                                <pre>MENU -> tools->options -> TAB integration -> BUTTON Url Overrides -> FIELD Override all entry URLS</pre>
+                                <p>Value</p>
+                                <pre>cmd://"%LOCALAPPDATA%\KeeForm\AutoIt3.exe" "%LOCALAPPDATA%\KeeForm\KeeForm.au3" {FIREFOX} "{URL}" "{USERNAME}" "{PASSWORD}"</pre>
+                                <p>(If you want to start Chrome, you will have to replace FIREFOX with GOOGLECHROME)</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>How to uninstall KeeForm manually? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>Only experienced users should attempt this. And backup your system first! Use this only to remove "early test versions" or in case the standard Windows uninstall method did not remove everything.</p> --- <p>Please run the un-installer first. This will take care of any registry entries and remove the KeeForm folder from your KeePass installation.</p>
+                                <p>The un-installer will also try to remove the "URL override" configuration by restoring the previous value.</p>
+                                <hr />
+                                <p>Should the uninstaller fail, please try the following steps.</p>
+                                <p>Remove any KeeForm Folders in the %LOCALAPPDATA% folder and in your KeePass folder.</p>
+                                <p>Remove the Url Override configuration.</p>
+                                <pre>MENU -> tools->options-> TAB integration -> BUTTON Url Overrides</pre>
+                                <p>If you see something like cmd://"...\KeeForm\" ... just remove it.</p>
+                                <p>Remove all registry keys with the following commands.</p>
+                                <pre>
+reg.exe DELETE HKCU\Software\Mozilla\NativeMessagingHosts\org.keeform.host /f
+reg.exe DELETE HKCU\Software\Google\Chrome\NativeMessagingHosts\org.keeform.host /f
+reg.exe DELETE HKLM\Software\Mozilla\NativeMessagingHosts\org.keeform.host /f
+reg.exe DELETE HKLM\Software\Google\Chrome\NativeMessagingHosts\org.keeform.host /f
+</pre>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Two step login like Google accounts? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>This should work in most cases by clicking on the KeeForm icon in your browser's toolbar.</p>
+                                <p>When you see a username or password field, simply click the KeeForm icon to fill the fields.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Only Windows is supported? What versions? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>Correct. KeeForm will not run on other platforms.</p>
+                                <ul>
+                                  <li>Windows 10 is fully supported.</li>
+                                  <li>Windows XP is not supported</li>
+                                  <li>Windows 7 should work, but is not well-tested.</li>
+                                  <li>Windows 8 probably works too, but has never been test.</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>KeeForm Password? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p class="uk-text-warning">The latest version does not use TCP anymore, and the password is not required anymore.</p>
+                                <hr />
+                                <p>This optional. This field can be left empty. But it is recommended to use a password, of course.</p>
+                                <p>If you want, you can enter a password during the installation to secure the communication between the KeeForm and Firefox (e.g. to prevent other apps "from accidentally" eavesdropping that communication). Don't forget to set the same password on the options page of the KeeForm Firefox extension as well. DO NOT RE-USE YOUR KEEPASS PASSWORD FOR THIS (or any other password).</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Does KeeForm work, if I use "keepass.exe --cfg-local"? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>Yes, it will still work, however the KeeForm installer won't be able to guess the location of your Keepass 2 configuration file. So you will have to add the override configuration manually.</p>
+                                <p>Unfortunately KeePass does not throw any config error messages, so when a config error happens, KeeForm won't be able to alert you.</p>
+                                <p>To add the KeeForm override, please run this command in a command prompt:</p>
+                                <pre>
+"%PROGRAMFILES(X86)%\KeePass Password Safe 2\KeePass.exe" -cfg-local:"\path\to\KeePass.config.xml" --add-urloverride --scheme:https --value:"cmd://\""%"LOCALAPPDATA"%"\KeeForm\AutoIt3.exe\" \""%"LOCALAPPDATA"%"\KeeForm\KeeForm.au3\" {GOOGLECHROME} \"{BASE}\" \"{USERNAME}\" \"{PASSWORD}\"" --activate</pre>
+                                <p>Instead of Chrome, you can also use <code>{FIREFOX}</code>, <code>{EDGE}</code>, or <code>"path\to\browser.exe"</code>. Quotes are required if the path contains a space character. </p>
+                                <p>To remove the KeeForm override, please run this command</p>
+                                <pre>
+"%PROGRAMFILES(X86)%\KeePass Password Safe 2\KeePass.exe" -cfg-local:"\path\to\KeePass.config.xml" --remove-urloverride --scheme:https --value:"cmd://\""%"LOCALAPPDATA"%"\KeeForm\AutoIt3.exe\" \""%"LOCALAPPDATA"%"\KeeForm\KeeForm.au3\" {GOOGLECHROME} \"{BASE}\" \"{USERNAME}\" \"{PASSWORD}\""</pre>
+                                <p>Please note, that the value has to be exactly the one you used in the add command, or else KeePass will fail to remove it.</p>
+                                <p>Obviously, you could also remove the override with KeePass in</p>
+                                <code>MENU -> tools->options-> TAB integration -> BUTTON Url Overrides</code>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-margin-xlarge">
+                      <div class="uk-width-1-1@m">
+                        <h2 class="uk-h3 uk-heading-bullet uk-margin-medium uk-text-left"> General </h2>
+                        <div class="uk-accordion-default" uk-accordion="collapsible: true;">
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Does KeeForm contain any malware? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>KeeForm was born in 2005. Since then KeeForm has never had any malware/adware/coinware/protestware.</p>
+                                <p>However it is not uncommon that AV software report false positives. Even digitally signed KeePass has this issue from time to time.</p>
+                                <p>You can check the current malware scan status using the link below:</p>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">KeeForm website</p>
+                                <a href="https://transparencyreport.google.com/safe-browsing/search?url=keeform.org" target="_blank">https://transparencyreport.google.com/safe-browsing/search?url=keeform.org</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 4.5.0</p>
+                                <a href="https://www.virustotal.com/gui/file/25b50dc7d013d8af3dc95a52f976b3978105e503213679a45797a40f70b5fc76" target="_blank">https://www.virustotal.com/gui/file/25b50dc7d013d8af3dc95a52f976b3978105e503213679a45797a40f70b5fc76</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 4.4.0</p>
+                                <a href="https://www.virustotal.com/gui/file/4fa5269897f2a047cd3a891476441f59eff5b6901cd4d5a1d1752c7dc1b105d5" target="_blank">https://www.virustotal.com/gui/file/4fa5269897f2a047cd3a891476441f59eff5b6901cd4d5a1d1752c7dc1b105d5</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 4.3.0</p>
+                                <a href="https://www.virustotal.com/gui/file/bfbef42fb7f8b9eb65f4c2c0f84bee66d2460546a03c513a6574d3db4b4daaaf" target="_blank">https://www.virustotal.com/gui/file/bfbef42fb7f8b9eb65f4c2c0f84bee66d2460546a03c513a6574d3db4b4daaaf</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 4.2.0</p>
+                                <a href="https://www.virustotal.com/gui/file/335d9302efb12aa2a0015ac17ae45e3d70db19e21671f0d577d849a58ea76a9a/detection" target="_blank">https://www.virustotal.com/gui/file/335d9302efb12aa2a0015ac17ae45e3d70db19e21671f0d577d849a58ea76a9a/detection</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 4.1.0</p>
+                                <a href="https://www.virustotal.com/gui/file/8d2383a2a0e896d61388ba14c97a622dadcd62cf6400f5c924256fbffdfd95da/detection" target="_blank">https://www.virustotal.com/gui/file/8d2383a2a0e896d61388ba14c97a622dadcd62cf6400f5c924256fbffdfd95da/detection</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 3.5.1</p>
+                                <a href="https://www.virustotal.com/gui/file/a98782c9bd1490d56c9656bdf27821612a8af32edd97599611b2c2c5feffec57/detection" target="_blank">https://www.virustotal.com/gui/file/a98782c9bd1490d56c9656bdf27821612a8af32edd97599611b2c2c5feffec57/detection</a>
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Installer version 3.0.0 </p>
+                                <a href="https://www.virustotal.com/gui/file/f7056b47c56d294e56c3c6058b42dbe214d18b82420aa0a31cbc5d0ef3668a1e/detection" target="_blank">https://www.virustotal.com/gui/file/f7056b47c56d294e56c3c6058b42dbe214d18b82420aa0a31cbc5d0ef3668a1e/detection</a>
+                                <p>If you encounter any false positives, please report them to your AV vendor. We appreciate it!</p>
+                                <hr />
+                                <p class="uk-text-emphasis uk-margin-remove-bottom">Sourceforge link to release notes</p>
+                                <a href="https://sourceforge.net/p/keepass/discussion/329220/thread/3a0d58fa/?limit=100" target="_blank">https://sourceforge.net/p/keepass/discussion/329220/thread/3a0d58fa/?limit=100/</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>When did KeeForm development start? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>The first version of KeeForm was released in 2005 in the AutoIt forums.</p>
+                                <p>
+                                  <a href="https://www.autoitscript.com/forum/topic/19403-keeform-204/">https://www.autoitscript.com/forum/topic/19403-keeform-204/</a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Software License AutoIt? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>KeeForm bundles the following software in the installer package:</p>
+                                <ul>
+                                  <li> AutoIt3.exe</li>
+                                  <li> Include/*</li>
+                                  <li>AES2.au3</li>
+                                </ul>
+                                <p>That software is governed by the AutoIt license</p>
+                                <a href="https://www.autoitscript.com/autoit3/docs/license.htm" target="_blank">https://www.autoitscript.com/autoit3/docs/license.htm</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Do you provide technical support? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>We try to help as much as possible, when/if we have time. You can contact us via Telegram or email directly. Or post in the KeePass forums.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>How much does KeeForm cost? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">KeeForm is free.</div>
+                            </div>
+                          </div>
+                          <div class="el-item">
+                            <a class="el-title uk-accordion-title" href>Why is there no GitHub repository yet? <span uk-accordion-icon></span>
+                            </a>
+                            <div class="uk-accordion-content">
+                              <div class="el-content uk-panel">
+                                <p>This is on the todo-list, but other tasks have higher priority at the moment :(</p>
+                                <p>But the installer includes the source code of the KeeForm FireFox and Chrome (and New Edge) browser extensions, the KeeForm native messaging component, and the KeePass add-on.</p>
+                                <p>KeeForm uses a mix of programming languages.</p>
+                                <ul>
+                                  <li>AutoIt (KeePass add-on)</li>
+                                  <li>Golang (Native messaging)</li>
+                                  <li>Javascript (browser extensions)</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>

@@ -1,0 +1,12 @@
+a.uk-logo:hover {
+  color: white;
+}
+.uk-logo #circ1 {
+  fill: transparent;
+  color: transparent;
+}
+.uk-logo:hover #circ1 {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  fill: white;
+}

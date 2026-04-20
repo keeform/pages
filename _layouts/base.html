@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}KeeForm</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="icon" type="image/x-icon"    href="{{ '/assets/favicon.ico'    | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="152x152"    href="{{ '/assets/favicon/favicon-152.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/theme.css' | relative_url }}">
+	<script src="{{ '/assets/uikit.min.js' | relative_url }}"></script>
+	<script src="{{ '/assets/uikit-icons.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/theme.js' | relative_url }}"></script>
+	<script src="{{ '/assets/fa-icons.js' | relative_url }}"></script>
+</head>
+<body>
+
+
+        <div class="uk-hidden-visually uk-notification uk-notification-top-left uk-width-auto">
+          <div class="uk-notification-message">
+            <a href="#tm-main" class="uk-link-reset">Skip to main content</a>
+          </div>
+        </div>
+        <div class="tm-page-container uk-clearfix">
+          <div class="tm-page uk-margin-auto">
+            <header class="tm-header-mobile uk-hidden@m">
+              <div class="uk-navbar-container">
+                <div class="uk-container uk-container-expand">
+                  <nav class="uk-navbar" uk-navbar="{&quot;align&quot;:&quot;left&quot;,&quot;container&quot;:&quot;.tm-header-mobile&quot;,&quot;boundary&quot;:&quot;.tm-header-mobile .uk-navbar-container&quot;}">
+                    <div class="uk-navbar-center">
+                      <a href="{{ '/' | relative_url }}" aria-label="Back to home" class="uk-logo uk-navbar-item">
+                        <img src="{{ '/assets/images/svg/kf_text2_plain.svg' | relative_url }}" width="193" height="80" alt uk-svg>
+                      </a>
+                    </div>
+                    <div class="uk-navbar-right">
+                      <a uk-toggle href="#tm-dialog-mobile" class="uk-navbar-toggle">
+                        <div uk-navbar-toggle-icon></div>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+              <div id="tm-dialog-mobile" uk-offcanvas="container: true; overlay: true" mode="slide" flip>
+                <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                  <button class="uk-offcanvas-close uk-close-large" type="button" uk-close uk-toggle="cls: uk-close-large; mode: media; media: @s"></button>
+                  <div class="uk-margin-auto-bottom">
+                    <div class="uk-panel" id="module-menu-dialog-mobile">
+                      <ul class="uk-nav uk-nav-default">
+                        <li {% if page.url == '/' %}class="uk-active"{% endif %}>
+                          <a href="{{ '/' | relative_url }}">
+                            <span class="uk-margin-small-right" uk-icon="icon: fa-solid-home"></span> Home
+                          </a>
+                        </li>
+                        <li {% if page.url contains '/keeform-install' %}class="uk-active"{% endif %}>
+                          <a href="{{ '/keepass2/keeform-install' | relative_url }}">
+                            <span class="uk-margin-small-right" uk-icon="icon: fa-wrench"></span> Install
+                          </a>
+                        </li>
+                        <li {% if page.url contains '/keeform-beta' %}class="uk-active"{% endif %}>
+                          <a href="{{ '/keepass2/keeform-beta' | relative_url }}">
+                            <span class="uk-margin-small-right" uk-icon="icon: heart"></span> Beta
+                          </a>
+                        </li>
+                        <li {% if page.url contains '/demo' %}class="uk-active"{% endif %}>
+                          <a href="{{ '/keepass2/keeform-demo' | relative_url }}">
+                            <span class="uk-margin-small-right" uk-icon="icon: fa-solid-eye"></span> Demo
+                          </a>
+                        </li>
+                        <li {% if page.url contains '/faq' %}class="uk-active"{% endif %}>
+                          <a href="{{ '/keepass2/keeform-faq' | relative_url }}">
+                            <span class="uk-margin-small-right" uk-icon="icon: fa-solid-question"></span> FAQ
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <header class="tm-header uk-visible@m">
+              <div uk-sticky media="@m" show-on-up animation="uk-animation-slide-top" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container">
+                <div class="uk-navbar-container">
+                  <div class="uk-container uk-container-expand">
+                    <nav class="uk-navbar" uk-navbar="{&quot;align&quot;:&quot;left&quot;,&quot;container&quot;:&quot;.tm-header &gt; [uk-sticky]&quot;,&quot;boundary&quot;:&quot;.tm-header .uk-navbar-container&quot;}">
+                      <div class="uk-navbar-left ">
+                        <a href="{{ '/' | relative_url }}" aria-label="Back to home" class="uk-logo uk-navbar-item">
+                          <img src="{{ '/assets/images/svg/kf_text2_plain.svg' | relative_url }}" width="193" height="80" alt uk-svg>
+                        </a>
+                      </div>
+                      <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav">
+                          <li {% if page.url == '/' %}class="uk-active"{% endif %}>
+                            <a href="{{ '/' | relative_url }}">
+                              <span class="uk-margin-xsmall-right" uk-icon="icon: fa-solid-home"></span> Home
+                            </a>
+                          </li>
+                          <li {% if page.url contains '/keeform-install' %}class="uk-active"{% endif %}>
+                            <a href="{{ '/keepass2/keeform-install' | relative_url }}">
+                              <span class="uk-margin-xsmall-right" uk-icon="icon: fa-wrench"></span> Install
+                            </a>
+                          </li>
+                          <li {% if page.url contains '/keeform-beta' %}class="uk-active"{% endif %}>
+                            <a href="{{ '/keepass2/keeform-beta' | relative_url }}">
+                              <span class="uk-margin-xsmall-right" uk-icon="icon: heart"></span> Beta
+                            </a>
+                          </li>
+                                                    <li {% if page.url contains '/demo' %}class="uk-active"{% endif %}>
+                            <a href="{{ '/keepass2/keeform-demo' | relative_url }}">
+                              <span class="uk-margin-xsmall-right" uk-icon="icon: fa-solid-eye"></span> Demo
+                            </a>
+                          </li>
+                          <li {% if page.url contains '/faq' %}class="uk-active"{% endif %}>
+                            <a href="{{ '/keepass2/keeform-faq' | relative_url }}">
+                              <span class="uk-margin-xsmall-right" uk-icon="icon: fa-solid-question"></span> FAQ
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+
+
+<!-- ── Page content ── -->
+<main id="tm-main">{{ content }}</main>
+
+                        <footer>
+                          <style class="uk-margin-remove-adjacent">
+                            #footer\#0 .el-image {
+                              margin-right: -3px;
+                            }
+                            @media (max-width:639px) {
+                              #footer\#1 {
+                                margin-bottom: 20px;
+                                margin-top: 0;
+                              }
+                            }
+                            #footer\#2 svg {
+                              max-height: 64px
+                            }
+                          </style>
+                          <div id="footer#2" class="uk-section-secondary uk-section uk-padding-remove-vertical" uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-small; delay: false;">
+                            <div class="uk-container">
+                              <div class="uk-grid-margin uk-grid tm-grid-expand" uk-grid>
+                                <div class="uk-grid-item-match uk-flex-middle uk-width-expand@s">
+                                  <div class="uk-panel uk-width-1-1">
+                                    <div class="footer-logo uk-margin-remove-vertical uk-text-left@s uk-text-center" uk-scrollspy-class="uk-animation-slide-left-small">
+                                      <a class="el-link uk-logo" href="{{ '/' | relative_url }}">
+                                        <img class="el-image uk-text-secondary" src="{{ '/assets/images/svg/kf_text2_plain.svg' | relative_url }}" alt loading="lazy" width="128" height="53" uk-svg>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="uk-grid-item-match uk-flex-middle uk-width-auto@s" id="footer#1">
+                                  <div class="uk-panel uk-width-1-1">
+                                    <div id="footer#0" class="uk-text-center" uk-scrollspy-class>
+                                      <ul class="uk-margin-remove-bottom uk-subnav uk-flex-center" uk-margin>
+                                        <li class="el-item ">
+                                          <a class="el-link" href="https://t.me/keeform">
+                                            <span class="el-image" uk-icon="icon: fa-telegram-plane;"></span> Telegram </a>
+                                        </li>
+                                        <li class="el-item ">
+                                          <a class="el-link" href="mailto:dave_keepass@users.sourceforge.net">
+                                            <span class="el-image" uk-icon="icon: mail;"></span> email </a>
+                                        </li>
+                                        <li class="el-item ">
+                                          <a class="el-link" href="{{ '/keeform/privacy' | relative_url }}">
+                                            <span class="el-image" uk-icon="icon: eye-slash;"></span> Privacy Policy </a>
+                                        </li>
+                                        <li class="el-item ">
+                                          <a class="el-link" href="{{ '/keeform/terms' | relative_url }}">
+                                            <span class="el-image" uk-icon="icon: bolt;"></span> Terms </a>
+                                        </li>
+                                        <li class="el-item ">
+                                          <a class="el-link" href="{{ '/keeform/credits' | relative_url }}">
+                                            <span class="el-image" uk-icon="icon: heart;"></span> Credits </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </footer>
+      </div>
+    </div>
+</body>
+</html>
