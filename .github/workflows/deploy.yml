@@ -36,10 +36,10 @@ jobs:
         run: |
           mkdir -p _data
           cat > _data/last_modified.yml << EOF
-          faq:     "$(git log -1 --format='%Y-%m-%d' -- keepass2/keeform-faq.html)"
-          privacy: "$(git log -1 --format='%Y-%m-%d' -- keeform/privacy.html)"
-          terms:   "$(git log -1 --format='%Y-%m-%d' -- keeform/terms.html)"
-          credits: "$(git log -1 --format='%Y-%m-%d' -- keeform/credits.html)"
+          faq:     "$(git log -1 --format=%cd --date=format:'%B %d, %Y' -- keepass2/keeform-faq.html)"
+          privacy: "$(git log -1 --format=%cd --date=format:'%B %d, %Y' -- keeform/privacy.html)"
+          terms:   "$(git log -1 --format=%cd --date=format:'%B %d, %Y' -- keeform/terms.html)"
+          credits: "$(git log -1 --format=%cd --date=format:'%B %d, %Y' -- keeform/credits.html)"
           EOF
           echo "Generated last_modified.yml:"
           cat _data/last_modified.yml
