@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#05090f"></stop>
+      <stop offset="100%" stop-color="#070d18"></stop>
+    </linearGradient>
+    <radialGradient id="screen-glow" cx="25%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#1c62d3" stop-opacity="0.22"></stop>
+      <stop offset="60%" stop-color="#1c62d3" stop-opacity="0.06"></stop>
+      <stop offset="100%" stop-color="#05090f" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="transparent"></stop>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.7"></stop>
+    </radialGradient>
+    <pattern id="scan" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="4" fill="none"></rect>
+      <rect width="1" height="1" fill="#fff" fill-opacity="0.012"></rect>
+    </pattern>
+  </defs>
+  <rect width="1440" height="400" fill="url(#bg)"></rect>
+  <rect width="1440" height="400" fill="url(#screen-glow)"></rect>
+  <rect width="1440" height="400" fill="url(#scan)"></rect>
+  <rect width="1440" height="400" fill="url(#vignette)"></rect>
+  
+  <g transform="translate(260,200)">
+    <circle r="90" fill="#1c62d3" fill-opacity="0.06" stroke="#1c62d3" stroke-opacity="0.12" stroke-width="1.5"></circle>
+    <circle r="62" fill="#1c62d3" fill-opacity="0.08" stroke="#1c62d3" stroke-opacity="0.18" stroke-width="1"></circle>
+    <polygon points="-18,-26 32,0 -18,26" fill="#1c62d3" fill-opacity="0.22"></polygon>
+  </g>
+  <line x1="0" y1="1" x2="1440" y2="1" stroke="#fff" stroke-opacity="0.04" stroke-width="1"></line>
+  <line x1="0" y1="399" x2="1440" y2="399" stroke="#fff" stroke-opacity="0.04" stroke-width="1"></line>
+  
+  <g fill="#fff" fill-opacity="0.04">
+    <rect x="12" y="40" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="80" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="120" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="160" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="200" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="240" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="280" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="320" width="14" height="20" rx="3"></rect>
+    <rect x="12" y="360" width="14" height="20" rx="3"></rect>
+  </g>
+  
+  <g fill="#fff" fill-opacity="0.04">
+    <rect x="1414" y="40" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="80" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="120" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="160" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="200" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="240" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="280" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="320" width="14" height="20" rx="3"></rect>
+    <rect x="1414" y="360" width="14" height="20" rx="3"></rect>
+  </g>
+</svg>
